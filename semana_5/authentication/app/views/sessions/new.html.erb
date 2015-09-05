@@ -1,0 +1,14 @@
+<ul>
+  <% @session.errors.full_messages.each do |error| %>
+   <li><%=error %></li>
+   <%end%>
+</ul>
+<%= form_for @session do |f| %>
+  <%= f.label :email %> <br>
+  <%= f.text_field :email %>
+  <br>
+  <%= f.label :password %>
+  <%= f.text_field :password %>  
+  <%= f.submit "Crear" %>
+  <br>
+<% end %>

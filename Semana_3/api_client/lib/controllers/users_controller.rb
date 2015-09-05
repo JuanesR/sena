@@ -24,7 +24,21 @@ class UsersController < ApplicationController
   end
 
   post '/:id/update' do
-
+    @user = User.find(params[:id])
+    @user.update
+    redirect to('/')
   end
 
+  get '/:id/delete' do
+    @user = User.find(params[:id])
+    @user.delete
+    redirect to('/')
+  end
+
+
+
 end
+
+
+
+#10.74.79.174

@@ -8,6 +8,10 @@ class User < Wrapper::Base
                   headers: {'Content-Type' => 'application/json'})
   end
 
+  def delete
+    HTTParty.delete(HOST + "/user/#{self.id}.json")
+  end
+
   def to_json
     {user: {
         id: self.id,
@@ -19,15 +23,15 @@ class User < Wrapper::Base
     }}.to_json
   end
 
-  def self.all
-    get('/users.json').map do |item|
-      new(item)
-    end
-  end
+  #def self.all
+  #  get('/users.json').map do |item|
+  #    new(item)
+  #  end
+  #end
 
-  def self.find(id)
-    new(get("/users/#{id}.json"))
-  end
+  #def self.find(id)
+  #  new(get("/users/#{id}.json"))
+  #end
 
 
 end
