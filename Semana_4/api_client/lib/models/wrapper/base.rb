@@ -64,4 +64,8 @@ module Wrapper
       HTTParty.delete(HOST + url).parsed_response
     end
   end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 2579b836ee454178cffbc724e848f592dc3732ad

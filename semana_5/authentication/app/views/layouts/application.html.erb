@@ -8,16 +8,28 @@
 </head>
 <body>
 
+<<<<<<< HEAD
 <% flash.each do |key,msg| %>
+=======
+<% flash.each do |key, msg| %>
+>>>>>>> 2579b836ee454178cffbc724e848f592dc3732ad
   <p><%= msg %></p>
 <% end %>
 
 <% if @current_user %>
+<<<<<<< HEAD
   <p> Bienvenido <%= @current_user.name %></p>
   <%= link_to 'salir', destroy_sessions_path %>
  <% else %>
   <%= link_to 'Ingresar', new_session_path %>
  <% end %>  
+=======
+  <p>Bienvenido <%= @current_user.name %></p>
+  <%= link_to 'Salir', destroy_sessions_path %>
+<% else %>
+  <%= link_to 'Ingresar', new_session_path %>
+<% end %>
+>>>>>>> 2579b836ee454178cffbc724e848f592dc3732ad
 
 <%= yield %>
 

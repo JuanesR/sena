@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :users
   root 'pages#home'
+<<<<<<< HEAD
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -61,4 +62,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+=======
+>>>>>>> 2579b836ee454178cffbc724e848f592dc3732ad
 end

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   set :views, File.join(APP_PATH, 'lib', 'views', 'users')
+
   get '/' do
     @users = User.all
     erb :index
@@ -36,9 +37,14 @@ class UsersController < ApplicationController
   end
 
 
+<<<<<<< HEAD
 
 end
 
 
 
 #10.74.79.174
+=======
+  delete ':id/delete'
+end
+>>>>>>> 2579b836ee454178cffbc724e848f592dc3732ad
