@@ -1,0 +1,27 @@
+<h3>Ventas</h3>
+<hr>
+<table>
+	<thead>
+    <tr>
+      <th>ID</th>
+      <th>Produtcto</th>
+      <th>Cantidad</th>
+      <th>Valos bruto</th>
+      <th>Valor Iva</th>
+      <th>Valor Total</th>
+    </th>
+    </thead>
+    <tbody>
+    	<% @sells.each do |sell| %>
+    	<tr>
+    		<td><%= sell.id %></td>
+    		<td><%= sell.product.name %></td>
+    		<td><%= sell.fee_total %></td>
+    		<td><%= sell.price_total %></td>
+    	</tr>
+    	<% end %>
+    </tdoby>
+</table>
+
+<%= link_to 'Nueva venta', new_sell_path, class: 'button tiny' %>
+

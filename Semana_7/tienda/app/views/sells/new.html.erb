@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="medium-6 columns">
+    <%=form_for(@sell) do |f|%>
+
+    <% if @sell.errors.any? %>
+      <div class="panel">
+      	<h4> Errores al procesar la ventana </h4>
+      	<hr>
+      	<ul>
+          <% @sell.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+       <% end %>
+    <% end %>
+
+     <%= f.label :product %>
+     <%= f.select :product_id, options_from_collection_for_select(Product.all, :id, :name, @sell.product_id),
+     			   {prompt: 'seleccion un producto'}	 %>
+     
+     <select name="product">
+       <option value=""></option>
+       <option value="1" selected="selected">Leche</option>
+       <option value="2">Papas</option>
+       <option value="3">Carnes</option>
+     </select>
+
+     <%= f.label :quantity %>
+     <%= f.text_field :quantity, class: 'sell-quantity' %>
+
+     <%= f.submit "Comprar" %>
+  </div>
+   <div class="medium-6 columns">
+  	<div class="panel radius">
+    <h3>Total Factura</h3>
+    <hr>
+    <b>Valor:</b><p class="valor">0.00</p>
+    <b>Valor Iva:</b><p class="iva">0.00</p>
+    <b>Valor Total:</b><p class="valor-total">0.00</p>
+   </div>
+  </div>
+
+
+
+<%end%>
